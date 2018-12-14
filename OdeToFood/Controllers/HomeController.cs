@@ -46,6 +46,7 @@ namespace OdeToFood.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(RestaurantEditModel model)
         {
             if (ModelState.IsValid)
@@ -59,7 +60,10 @@ namespace OdeToFood.Controllers
 
                 return RedirectToAction(nameof(Details), new { id = newRestaurant.Id });
             }
-            return View();
+            else
+            {
+                return View();
+            }
         }
     }
 }
