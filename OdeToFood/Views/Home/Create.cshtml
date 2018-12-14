@@ -5,7 +5,7 @@
 <h1> Create </h1>
 
 <form action="Create" method="post">
-
+    @Html.AntiForgeryToken();
     <div>
         <label asp-for="Name"></label>
         <input asp-for="Name" />
