@@ -13,12 +13,6 @@
                 <td>@restaurant.Id</td>
                 <td>@restaurant.Name</td>
 
-                @*HTML*@
-                <td> <a href="/home/details/@restaurant.Id"> Details </a></td>
-
-                @*MVC.Framework*@
-                <td> @Html.ActionLink("Go", "Details", new { id = restaurant.Id }) </td>
-
                 @*ASP.NET CORE*@
                 <td><a asp-action="Details" asp-route-id="@restaurant.Id"> More</a> </td>
             </tr>
